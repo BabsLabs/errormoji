@@ -8,12 +8,12 @@ module Errormoji
   module ExceptionPatch
     # Override Exception#message to prefix with an emoji when enabled
     def message
-        base_msg = super
-        if Errormoji.global_exceptions?
-            "#{Errormoji.random_emoji} #{base_msg}"
-        else
-            base_msg
-        end
+      base_msg = super
+      if Errormoji.global_exceptions?
+        "#{Errormoji.random_emoji} #{base_msg}"
+      else
+        base_msg
+      end
     end
   end
 end

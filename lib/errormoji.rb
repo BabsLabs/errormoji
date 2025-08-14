@@ -56,15 +56,12 @@ module Errormoji
   class << self
     # Only allow assignment of an Array for emojis
     def emojis=(list)
-      unless list.is_a?(Array)
-        raise TypeError, "Errormoji.emojis must be an Array"
-      end
+      raise TypeError, "Errormoji.emojis must be an Array" unless list.is_a?(Array)
+
       @emojis = list
     end
 
-    def emojis
-      @emojis
-    end
+    attr_reader :emojis
 
     def random_emoji
       @emojis.sample
@@ -89,6 +86,7 @@ module Errormoji
 
     # Railtie for Rails integration
     if Object.const_defined?(:Rails) && Rails.const_defined?(:Railtie)
+      # Provides Rails integration for Errormoji, enabling emoji decoration via configuration.
       class Railtie < Rails::Railtie
         initializer "errormoji.configure_rails_initialization" do |app|
           Rails.logger.info "Errormoji Railtie initializer executed"

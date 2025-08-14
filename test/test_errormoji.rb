@@ -3,8 +3,6 @@
 require "test_helper"
 
 class TestErrormoji < Minitest::Test
-
-
   def test_that_it_has_a_version_number
     refute_nil ::Errormoji::VERSION
   end
@@ -43,8 +41,6 @@ class TestErrormoji < Minitest::Test
   ensure
     Errormoji.disable_global_exceptions!
   end
-
-
 
   def test_exception_message_without_global_exceptions
     Errormoji.disable_global_exceptions!
