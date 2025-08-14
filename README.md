@@ -1,6 +1,6 @@
 # Errormoji
 
-[![Build Status](https://github.com/your_username/errormoji/actions/workflows/ci.yml/badge.svg)](https://github.com/your_username/errormoji/actions)
+[![Build Status](https://github.com/babslabs/errormoji/actions/workflows/ci.yml/badge.svg)](https://github.com/babslabs/errormoji/actions)
 
 Errormoji is a Ruby gem that adds a touch of fun to your error messages by decorating them with ASCII emojis. Whether you're debugging or just want to make your errors more engaging, Errormoji has you covered!
 
@@ -30,18 +30,6 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ```bash
 gem install errormoji
-```
-
-Install the gem and add to the application's Gemfile by executing:
-
-```bash
-bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-```
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-```bash
-gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 ```
 
 ## Usage
@@ -141,7 +129,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Errormoji project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/errormoji/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Errormoji project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/babslabs/errormoji/blob/main/CODE_OF_CONDUCT.md).
 
 ---
 
