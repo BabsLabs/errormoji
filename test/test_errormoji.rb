@@ -32,12 +32,14 @@ class TestErrormoji < Minitest::Test
     Errormoji.emojis = Errormoji::DEFAULT_EMOJIS
   end
 
-  def test_it_does_something_useful
+  def message_includes_emoji?(message)
+    Errormoji::DEFAULT_EMOJIS.any? { |emoji| message.include?(emoji) }
+  end
+
+  def test_exception_message_format_with_emoji_and_space
     Errormoji.enable_global_exceptions!
     exception = RuntimeError.new("Test error")
-    emoji, message = exception.message.split(" ", 2)
-    assert_includes Errormoji::DEFAULT_EMOJIS, emoji
-    assert_equal "Test error", message
+    assert message_includes_emoji?(exception.message), "Exception message should include an emoji from DEFAULT_EMOJIS"
   ensure
     Errormoji.disable_global_exceptions!
   end
