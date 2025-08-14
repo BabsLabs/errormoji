@@ -82,10 +82,19 @@ Errormoji.disable_global_exceptions!
 You can customize the emojis used by Errormoji:
 
 ```ruby
-Errormoji.emojis = ["😄", "😢", "😡"]  # Or use your favorite ASCII errormojis!
+Errormoji.emojis = ["😄", "😢", "😡"]
 ```
 
 This will replace the default emoji set with your custom list.
+
+You can also add emojis to your current list using the shovel operator (`<<`) or array concatenation (`+=`):
+
+```ruby
+Errormoji.emojis << "🤖"
+Errormoji.emojis += ["🔥"]
+```
+
+This lets you build your own emoji set incrementally!
 
 ## Development
 
