@@ -47,14 +47,15 @@ raise "Oops, something went wrong!"
 ```
 
 ### Enabling in Rails (Per-Environment)
-In a Rails app, you can enable `Errormoji` on a per-environment basis by adding a configuration line to your environment files:
+
+Errormoji provides a Railtie for seamless Rails integration. You can opt in or out of emoji error decoration by setting a configuration variable in your Rails environment files:
 
 ```ruby
 # config/environments/development.rb
 Rails.application.config.errormoji_enabled = true
 ```
 
-Then, `Errormoji` will automatically enable global exception decoration based on this configuration. For example, you can enable it in `development` and `test` environments but leave it disabled in `production`:
+The Railtie will automatically enable or disable global exception decoration based on this configuration. For example, you can enable it in `development` and `test` environments but leave it disabled in `production`:
 
 ```ruby
 # config/environments/test.rb
@@ -63,6 +64,9 @@ Rails.application.config.errormoji_enabled = true
 # config/environments/production.rb
 Rails.application.config.errormoji_enabled = false
 ```
+
+**How it works:**  
+When Rails boots, the Railtie checks `config.errormoji_enabled`. If set to `true`, Errormoji will decorate exception messages with emojis. If set to `false`, decoration is disabled. This lets you control Errormoji behavior per environment, with no manual initializer required!
 
 **Note:**  
 While Errormoji makes your errors way more fun (⌐■_■), we don’t recommend enabling it in production—unless your ops team loves errormojis as much as you do! Decorated error messages might confuse your logs, monitoring tools, or that one serious developer on your team. But hey, you’re the boss: enable Errormoji wherever you want!
