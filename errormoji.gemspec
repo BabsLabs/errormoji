@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.description = "A Ruby gem that increases happiness but supplimenting error messages with ascii emojis"
   # spec.homepage = "TODO: Put your gem's website or public repo URL here."
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.1.0"
+  spec.required_ruby_version = ">= 2.7"
   spec.files = ["lib/errormoji.rb", "lib/errormoji/exception_patch.rb", "lib/errormoji/version.rb"]
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"

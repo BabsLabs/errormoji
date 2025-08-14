@@ -4,6 +4,13 @@
 
 Errormoji is a Ruby gem that adds a touch of fun to your error messages by decorating them with ASCII emojis. Whether you're debugging or just want to make your errors more engaging, Errormoji has you covered!
 
+## Supported Ruby and Rails Versions
+
+- **Ruby:** 2.7, 3.0, 3.1, 3.2, 3.3, 3.4
+- **Rails:** 6.x, 7.x
+
+Errormoji is tested and supported on these versions. If you use other versions, please let us know how it works for you!
+
 
 
 ## Installation
