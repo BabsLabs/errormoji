@@ -110,7 +110,11 @@ bundle exec rake test
 
 This will run all tests and ensure your changes work as expected.
 
+## Interactive Console
+
 You can also run `bin/console` for an interactive prompt that will allow you to experiment with the gem.
+
+## Building and Installing the Gem
 
 To install this gem onto your local machine, run:
 
