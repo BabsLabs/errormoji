@@ -12,6 +12,7 @@ class ExceptionPatchTest < Minitest::Test
   def test_exception_patch_is_applied
     exception = RuntimeError.new("Test error")
     assert_respond_to exception, :message
-    assert_includes Errormoji::DEFAULT_EMOJIS, exception.message.split.first, "Exception message should start with an emoji from DEFAULT_EMOJIS"
+    starts_with_emoji = Errormoji::DEFAULT_EMOJIS.any? { |emoji| exception.message.start_with?(emoji) }
+    assert starts_with_emoji, "Exception message should start with an emoji from DEFAULT_EMOJIS"
   end
 end
