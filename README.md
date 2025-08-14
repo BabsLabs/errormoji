@@ -4,6 +4,11 @@
 
 Errormoji is a Ruby gem that adds a touch of fun to your error messages by decorating them with ASCII emojis. Whether you're debugging or just want to make your errors more engaging, Errormoji has you covered!
 
+**Example error messages with Errormoji:**
+- (╯°□°）╯︵ ┻━┻ Something went wrong!
+- (ಥ_ಥ) File not found!
+- (ಠ益ಠ) Invalid input!
+
 ## Supported Ruby and Rails Versions
 
 - **Ruby:** 2.7, 3.0, 3.1, 3.2, 3.3, 3.4
@@ -72,10 +77,10 @@ Rails.application.config.errormoji_enabled = true
 Rails.application.config.errormoji_enabled = false
 ```
 
-**How it works:**  
+**How it works:**
 When Rails boots, the Railtie checks `config.errormoji_enabled`. If set to `true`, Errormoji will decorate exception messages with emojis. If set to `false`, decoration is disabled. This lets you control Errormoji behavior per environment, with no manual initializer required!
 
-**Note:**  
+**Note:**
 While Errormoji makes your errors way more fun (⌐■_■), we don’t recommend enabling it in production—unless your ops team loves errormojis as much as you do! Decorated error messages might confuse your logs, monitoring tools, or that one serious developer on your team. But hey, you’re the boss: enable Errormoji wherever you want!
 
 To disable emoji decoration:
