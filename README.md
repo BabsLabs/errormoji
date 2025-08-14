@@ -43,7 +43,7 @@ require "errormoji"
 Errormoji.enable_global_exceptions!
 
 raise "Oops, something went wrong!"
-# Output: (╯°□°）╯︵ ┻━┻ Oops, something went wrong!
+# Output: (ノಠ益ಠ)ノ彡┻━┻ Oops, something went wrong!
 ```
 
 ### Enabling in Rails (Per-Environment)
@@ -64,6 +64,9 @@ Rails.application.config.errormoji_enabled = true
 Rails.application.config.errormoji_enabled = false
 ```
 
+**Note:**  
+While Errormoji makes your errors way more fun (⌐■_■), we don’t recommend enabling it in production—unless your ops team loves errormojis as much as you do! Decorated error messages might confuse your logs, monitoring tools, or that one serious developer on your team. But hey, you’re the boss: enable Errormoji wherever you want!
+
 To disable emoji decoration:
 
 ```ruby
@@ -75,14 +78,26 @@ Errormoji.disable_global_exceptions!
 You can customize the emojis used by Errormoji:
 
 ```ruby
-Errormoji.emojis = ["😄", "😢", "😡"]
+Errormoji.emojis = ["😄", "😢", "😡"]  # Or use your favorite ASCII errormojis!
 ```
 
 This will replace the default emoji set with your custom list.
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment with the gem.
+After checking out the repo, run `bin/setup` to install dependencies.
+
+## Running Tests
+
+To run the test suite, use:
+
+```bash
+bundle exec rake test
+```
+
+This will run all tests and ensure your changes work as expected.
+
+You can also run `bin/console` for an interactive prompt that will allow you to experiment with the gem.
 
 To install this gem onto your local machine, run:
 
@@ -111,3 +126,11 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Errormoji project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/errormoji/blob/main/CODE_OF_CONDUCT.md).
+
+---
+
+## Thank You for Using Errormoji!
+
+We appreciate you bringing a little more fun to your error messages. Happy coding!
+
+(╯°□°）╯︵ ┻━┻
