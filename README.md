@@ -25,8 +25,8 @@
 
 ## Supported Ruby & Rails Versions
 
-- **Ruby:** 2.7–3.4
-- **Rails:** 6.x, 7.x, 8.x
+- **Ruby:** 3.0+
+- **Rails:** 7.0+
 
 ---
 

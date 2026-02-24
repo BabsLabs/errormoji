@@ -12,9 +12,9 @@ Gem::Specification.new do |spec|
   spec.files       = Dir["lib/**/*", "bin/*", "test/**/*", "sig/**/*"]
   spec.homepage    = "https://github.com/babslabs/errormoji"
   spec.license     = "MIT"
-  spec.required_ruby_version = ">= 2.7"
+  spec.required_ruby_version = ">= 3.0"
 
-  spec.add_development_dependency "rails", ">= 6.0", "< 9.0"
+  spec.add_development_dependency "rails", ">= 7.0", "< 9.0"
 
   # Uncomment and update metadata as needed
   # spec.metadata["homepage_uri"] = spec.homepage
