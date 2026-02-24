@@ -26,7 +26,7 @@
 ## Supported Ruby & Rails Versions
 
 - **Ruby:** 2.7–3.4
-- **Rails:** 6.x, 7.x
+- **Rails:** 6.x, 7.x, 8.x
 
 ---
 
@@ -63,10 +63,15 @@ Errormoji.disable_global_exceptions!
 Enable or disable Errormoji per environment in your Rails config:
 ```ruby
 # config/environments/development.rb
-Rails.application.config.errormoji_enabled = true
+Rails.application.config.errormoji.enabled = true
 
 # config/environments/production.rb
-Rails.application.config.errormoji_enabled = false
+Rails.application.config.errormoji.enabled = false
+```
+
+Legacy config is still supported:
+```ruby
+Rails.application.config.errormoji_enabled = true
 ```
 
 **Note:**

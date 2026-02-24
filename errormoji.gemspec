@@ -14,8 +14,7 @@ Gem::Specification.new do |spec|
   spec.license     = "MIT"
   spec.required_ruby_version = ">= 2.7"
 
-  # Uncomment to add development dependencies
-  # spec.add_development_dependency "rails", ">= 6.0", "< 8.0"
+  spec.add_development_dependency "rails", ">= 6.0", "< 9.0"
 
   # Uncomment and update metadata as needed
   # spec.metadata["homepage_uri"] = spec.homepage

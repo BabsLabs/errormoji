@@ -23,4 +23,23 @@ class ExceptionPatchTest < Minitest::Test
   ensure
     Errormoji.disable_global_exceptions!
   end
+
+  def test_enable_global_exceptions_is_idempotent
+    Errormoji.enable_global_exceptions!
+    Errormoji.enable_global_exceptions!
+
+    patch_count = Exception.ancestors.count { |ancestor| ancestor == Errormoji::ExceptionPatch }
+    assert_equal 1, patch_count
+  ensure
+    Errormoji.disable_global_exceptions!
+  end
+
+  def test_disable_global_exceptions_is_safe_when_called_multiple_times
+    Errormoji.enable_global_exceptions!
+
+    Errormoji.disable_global_exceptions!
+    Errormoji.disable_global_exceptions!
+
+    refute Errormoji.global_exceptions?
+  end
 end
