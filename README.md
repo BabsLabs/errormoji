@@ -128,7 +128,7 @@ Rails integration coverage is split into two focused files:
 - `test/integration/railtie_test.rb` validates Railtie config behavior.
 - `test/integration/railtie_exceptions_test.rb` validates real Rails-raised exceptions from a minimal dummy app are decorated when enabled and plain when disabled.
 
-The Rails exception integration tests boot a minimal app from `test/dummy/` and hit request routes that raise `ActionController::BadRequest` and `ActiveRecord::RecordNotFound`.
+The Rails exception integration tests boot a minimal app from `test/dummy/` and exercise representative Rails exception scenarios through both raised-exception and middleware-rescued request paths.
 
 ---
 
