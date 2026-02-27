@@ -11,6 +11,7 @@
 - [Customization](#customization)
 - [Development](#development)
 - [Running Tests](#running-tests)
+- [Roadmap](#roadmap)
 - [Releasing a New Version](#releasing-a-new-version)
 - [Contributing](#contributing)
 - [License](#license)
@@ -112,6 +113,30 @@ Run the test suite with:
 ```bash
 bundle exec rake test
 ```
+
+Enable verbose Rails request logging for dummy-app integration tests only when needed:
+```bash
+bundle exec rake test:verbose
+```
+
+You can still use the environment variable directly if preferred:
+```bash
+ERRORMOJI_VERBOSE_TEST_LOGS=true bundle exec rake test
+```
+
+Rails integration coverage is split into two focused files:
+- `test/integration/railtie_test.rb` validates Railtie config behavior.
+- `test/integration/railtie_exceptions_test.rb` validates real Rails-raised exceptions from a minimal dummy app are decorated when enabled and plain when disabled.
+
+The Rails exception integration tests boot a minimal app from `test/dummy/` and hit request routes that raise `ActionController::BadRequest` and `ActiveRecord::RecordNotFound`.
+
+---
+
+## Roadmap
+
+- CI currently validates Rails integration against one Rails stream (latest resolvable Rails with Ruby 3.4); expand this to a Rails-version matrix.
+- Add configurable severity levels (for example, map `warn`/`error`/`fatal` to different emoji sets).
+- Support patching only specific exception classes instead of patching globally.
 
 ---
 

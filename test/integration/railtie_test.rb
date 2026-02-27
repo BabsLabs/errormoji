@@ -2,6 +2,8 @@
 
 require "test_helper"
 require "rails"
+require "action_controller"
+require "active_record"
 require "errormoji/railtie"
 
 class RailtieTest < Minitest::Test
@@ -89,6 +91,25 @@ class RailtieTest < Minitest::Test
     run_railtie_initializer(app)
 
     assert Errormoji.global_exceptions?
+  end
+
+  def test_railtie_keeps_full_default_emoji_pool_unless_explicitly_changed
+    app = build_app(errormoji_enabled: true)
+
+    run_railtie_initializer(app)
+
+    assert_equal Errormoji::DEFAULT_EMOJIS, Errormoji.emojis
+  end
+
+  def test_running_initializer_twice_does_not_double_enable_or_double_patch
+    app = build_app(errormoji_enabled: true)
+
+    run_railtie_initializer(app)
+    run_railtie_initializer(app)
+
+    assert Errormoji.global_exceptions?
+    patch_count = Exception.ancestors.count { |ancestor| ancestor == Errormoji::ExceptionPatch }
+    assert_equal 1, patch_count
   end
 
   def test_railtie_has_single_errormoji_configure_initializer
