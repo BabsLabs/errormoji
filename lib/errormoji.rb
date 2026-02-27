@@ -2,7 +2,11 @@
 
 require_relative "errormoji/version"
 require_relative "errormoji/exception_patch"
-require "rails/railtie" if Object.const_defined?(:Rails) && Rails.const_defined?(:Railtie)
+
+if Object.const_defined?(:Rails)
+  require "rails/railtie"
+  require_relative "errormoji/railtie"
+end
 
 # The Errormoji module is the core of the gem, providing methods to decorate
 # exception messages with fun ASCII emojis. It allows users to enable or disable
@@ -82,19 +86,6 @@ module Errormoji
     # Disable global decoration of Exception messages
     def disable_global_exceptions!
       @global_exceptions = false
-    end
-
-    # Railtie for Rails integration
-    if Object.const_defined?(:Rails) && Rails.const_defined?(:Railtie)
-      # Provides Rails integration for Errormoji, enabling emoji decoration via configuration.
-      class Railtie < Rails::Railtie
-        initializer "errormoji.configure_rails_initialization" do |app|
-          Rails.logger.info "Errormoji Railtie initializer executed"
-          if app.config.respond_to?(:errormoji_enabled) && app.config.errormoji_enabled
-            Errormoji.enable_global_exceptions!
-          end
-        end
-      end
     end
   end
 end
